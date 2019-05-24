@@ -1,0 +1,16 @@
+<div class="box-container">
+  <div class="file-box" *ngFor="let box of FileGroups; let i = index">
+    <div class="file-box-header">
+      <span class="count">{{box?.files.length}}&nbsp; pages</span>
+      <a (click)="viewAllFiles(i)" class="viewall" *ngIf="box?.files.length > 0">View Files</a>
+    </div>
+    <div class="file-box-display" cdkDropList [cdkDropListData]="box?.files" (cdkDropListDropped)="drop($event)"
+      [cdkDropListConnectedTo]="DropListNames" id="{{box.abbr}}">
+      <apc-pdf-page [page]="page" [width]="width" [singlePage]="false" *ngFor="let page of box?.files" cdkDrag>
+      </apc-pdf-page>
+    </div>
+    <div class="file-box-title">
+      <span class="title">{{box?.title}}</span>
+    </div>
+  </div>
+</div>

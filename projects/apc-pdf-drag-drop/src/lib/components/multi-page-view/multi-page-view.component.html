@@ -1,0 +1,15 @@
+<div class="container" *ngIf="pdfPages">
+  <div class="header">
+    <a (click)="close()" class="close-btn">Close View</a>
+  </div>
+    <div 
+    class="pages"
+    id="origin" 
+    #pages="cdkDropList" 
+    cdkDropList 
+    [cdkDropListData]="pdfPages" 
+    [cdkDropListConnectedTo]="destination"
+    (cdkDropListDropped)="drop($event)" style="overflow-y: scroll">
+      <apc-pdf-page [page]="page" [width]="800" *ngFor="let page of pdfPages" cdkDrag></apc-pdf-page>
+  </div>
+</div>

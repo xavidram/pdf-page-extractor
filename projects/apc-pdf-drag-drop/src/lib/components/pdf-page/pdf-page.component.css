@@ -1,0 +1,13 @@
+.page-container {
+  border: thin solid lightgrey;
+  opacity: 1;
+}
+.page-container:hover{
+  cursor: grab;
+}
+.page-container:active {
+  cursor: grabbing;
+}
+.pages {
+  overflow-y: scroll;
+}

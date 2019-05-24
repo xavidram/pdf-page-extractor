@@ -1,0 +1,10 @@
+<div class="viewer-container">
+  <div class="view-header">
+    <span class="title">APC Pdf Viewer</span>
+    <a (click)="closeFile()" *ngIf="fileSelected">Close File</a>
+  </div>
+  <div class="view-content" #PdfContainer>
+    <apc-pdf-uploader (selectedFile)="onFileSelected($event)" *ngIf="!pdfFile" ></apc-pdf-uploader>
+    <apc-pdf-pages [pdfFile]="pdfFile" [width]="width" *ngIf="pdfFile" [connectedTo]="dropList"></apc-pdf-pages>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="pages-container">
+  <mat-progress-bar
+    color="primary"
+    mode="determinate"
+    [value]="progress"
+    *ngIf="loading">
+  </mat-progress-bar>
+  <div 
+    class="pages"
+    id="pages" 
+    #pages="cdkDropList" 
+    cdkDropList 
+    [cdkDropListData]="pdfPages" 
+    [cdkDropListConnectedTo]="connectedTo"
+    (cdkDropListDropped)="drop($event)">
+    <apc-pdf-page [page]="page" [width]="width - 64" *ngFor="let page of pdfPages" cdkDrag></apc-pdf-page>
+  </div>
+</div>

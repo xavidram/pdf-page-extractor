@@ -1,0 +1,57 @@
+.box-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.file-box {
+  height: 250px;
+  width: 150px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 18px 1fr 32px;
+  border: thin solid lightgrey;
+  padding: 1rem;
+  grid-gap: 8px;
+
+  .file-box-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span{
+      cursor: default;
+    }
+    a {
+      cursor: pointer;
+      color: #cb4f37;
+    }
+  }
+
+  .file-box-display {
+    border: thin solid darkgrey;
+    overflow: hidden;
+    &:hover {
+      border: thick dashed #cb4f37;
+    }
+  }
+
+  .file-box-title {
+    text-align: center;
+    overflow: hidden;
+    word-wrap: none;
+    border: thin solid #cb4f37;
+    background-color: #cb4f37;
+    color: white;
+    padding: 4px;
+    font-size: 16px;
+    line-break: none;
+    white-space: nowrap;
+    cursor: default;
+  }
+}
+
+:host {
+  flex: 1;
+}

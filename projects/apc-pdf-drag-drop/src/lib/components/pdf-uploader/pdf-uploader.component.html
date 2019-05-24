@@ -1,0 +1,12 @@
+<div class="upload-container" [ngStyle]="{'display': fileUploaded ? 'none' : 'flex'}">
+  <form [formGroup]="uForm" class="upload-form">
+      <input 
+        type="file" 
+        name="uploadFile" 
+        id="uploadFile" 
+        class="file-upload-input" 
+        formControlName="uploadFile"
+        (change)="fileSelected($event)">
+      <label for="uploadFile"><strong>Choose a file</strong></label>
+  </form>
+</div>
